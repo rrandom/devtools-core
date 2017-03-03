@@ -20,6 +20,11 @@ module.exports = (webpackConfig, envConfig) => {
     webpackConfig.output.path = outputPath;
   }
 
+  webpackConfig.devtool = false;
+  webpackConfig.recordsPath = path.join(
+    __dirname, "../../", "module-manifest.json"
+  );
+
   webpackConfig.resolve.alias["devtools-network-request"] = path.resolve(
      packagesPath,
      "devtools-network-request/privilegedNetworkRequest"
